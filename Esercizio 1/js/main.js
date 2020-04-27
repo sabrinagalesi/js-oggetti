@@ -72,3 +72,4 @@ richiestaStudente.età = richiestaEtà;
 
 console.log(richiestaStudente);
 
+studenti.push(richiestaStudente);

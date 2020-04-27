@@ -17,13 +17,38 @@ var bici = [
         nome: "Bici 3",
         peso: 40
     },
-]
+    {
+        nome: "Bici 4",
+        peso: 10
+    },
+];
+
+var biciConPesoMinore = {};
+
+// var posizioneBiciMinore = 0;
 
 for(var i = 0; i < bici.length; i++) {
-    listaBici = bici[i];
-    console.log(listaBici);
-    for(var key in listaBici) {
-        console.log(listaBici[key], "=>", key); 
+    var listaBici = bici[i];
+    console.log(listaBici.peso);
+
+    //Se la mia bici con peso minore non è ancora settata, ci metto la prima che capita 
+    if(!biciConPesoMinore.peso) {
+        biciConPesoMinore = listaBici;
+        console.log("non avendo una bici minore ho messo la prima che capita", biciConPesoMinore)
     }
+
+    //Se la bici che sto esaminando è più leggera di quella che pensavo lo fosse.. allora..
+    if(listaBici.peso < biciConPesoMinore.peso) {
+        biciConPesoMinore= listaBici;
+        console.log(biciConPesoMinore);
+    }
+
+
+    /* if(listaBici.peso < bici[posizioneBiciMinore].peso) {
+        posizioneBiciMinore = i;
+    } */
+
 }
+
+alert(biciConPesoMinore.nome + " " + biciConPesoMinore.peso);
 
